@@ -1,0 +1,19 @@
+name: Build Docker Image
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build and save Docker image
+        run: |
+          docker build -t ${{ secrets.IMAGE_NAME }} \
+            .
+          docker save ${{ secrets.IMAGE_NAME }} > "${{ secrets.IMAGE_NAME }}.tar"
