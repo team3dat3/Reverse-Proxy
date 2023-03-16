@@ -42,5 +42,5 @@ jobs:
             docker stop ${{ secrets.IMAGE_NAME }}
             docker rm ${{ secrets.IMAGE_NAME }}
             docker load < "/root/containers/${{ secrets.IMAGE_NAME }}.tar"
-            docker run -d --name ${{ secrets.IMAGE_NAME }} -p ${{ secrets.IMAGE_PORT_OUT }}:${{ secrets.IMAGE_PORT_IN }} -v /ssl:/ssl ${{ secrets.IMAGE_NAME }}
+            docker run -d --name ${{ secrets.IMAGE_NAME }} -p 80:80 -p 443:443 -p 3306:3306 -v /ssl:/ssl ${{ secrets.IMAGE_NAME }}
             exit
