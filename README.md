@@ -9,7 +9,7 @@ Configure the MySQL server using the file: [nginx.conf](https://github.com/team3
 [![Build Docker Image](https://github.com/team3dat3/reverse-proxy/actions/workflows/main.yml/badge.svg)](https://github.com/team3dat3/reverse-proxy/actions/workflows/main.yml)
 
 ## Release branch
-- No releases yet.
+[![Build and Deploy Docker Image](https://github.com/team3dat3/reverse-proxy/actions/workflows/deploy.yml/badge.svg)](https://github.com/team3dat3/reverse-proxy/actions/workflows/deploy.yml)
 
 # How to run image
 Note: It is important the server contains a folder named `/ssl/` containing the SSL private key and certification.
