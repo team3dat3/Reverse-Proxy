@@ -7,4 +7,4 @@ RUN rm /etc/nginx/nginx.conf
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose port 80 to allow incoming HTTP traffic
-EXPOSE 80 443 3305
+EXPOSE 80 443 3306
