@@ -1,7 +1,7 @@
 # reverse proxy
 Nginx Server
 
-[![Build Docker Image](https://github.com/team3dat3/reverse-proxy/actions/workflows/main.yml/badge.svg)](https://github.com/team3dat3/reverse-proxy/actions/workflows/main.yml)
+[![Build and Deploy Docker Image](https://github.com/team3dat3/reverse-proxy/actions/workflows/deploy.yml/badge.svg)](https://github.com/team3dat3/reverse-proxy/actions/workflows/deploy.yml)
 
 ## Configuration
 
