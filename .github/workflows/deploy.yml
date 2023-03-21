@@ -2,7 +2,7 @@ name: Build and Deploy Docker Image
 
 on:
   push:
-    branches: [ release ]
+    branches: [ main ]
 
 jobs:
   deploy:
@@ -42,5 +42,5 @@ jobs:
             docker stop ${{ secrets.IMAGE_NAME }}
             docker rm ${{ secrets.IMAGE_NAME }}
             docker load < "/root/containers/${{ secrets.IMAGE_NAME }}.tar"
-            docker run -d --name ${{ secrets.IMAGE_NAME }} -p 80:80 -p 443:443 -p 3306:3306 -v /ssl:/ssl ${{ secrets.IMAGE_NAME }}
+            docker run -d --name ${{ secrets.IMAGE_NAME }} -p 80:80 -p 443:443 -p 3306:3306 -v /etc/letsencrypt/live/api.bergandersen.com:/ssl/api.bergandersen.com -v /etc/letsencrypt/live/bergandersen.com:/ssl/bergandersen.com ${{ secrets.IMAGE_NAME }}
             exit
