@@ -9,7 +9,7 @@ COPY nginx.conf /etc/nginx/nginx.conf
 # Create a new user and group
 RUN groupadd -g 1000 dockeruser && \
     useradd -u 1000 -g 1000 -ms /bin/bash dockeruser && \
-    usermod -aG docker dockeruser
+    usermod -aG dockeruser dockeruser
 
 # Set the owner of the copied files to the new user
 RUN chown -R dockeruser:dockeruser /ssl/api.bergandersen.com
