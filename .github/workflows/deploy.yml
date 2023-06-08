@@ -44,3 +44,7 @@ jobs:
             docker load < "/root/containers/${{ secrets.IMAGE_NAME }}.tar"
             docker run -d --name ${{ secrets.IMAGE_NAME }} -p 80:80 -p 443:443 -v /ssl:/ssl ${{ secrets.IMAGE_NAME }}
             exit
+      - name: Delete uploaded artifact
+        uses: geekyeggo/delete-artifact@v2
+        with:
+          name: ${{ secrets.IMAGE_NAME }}
